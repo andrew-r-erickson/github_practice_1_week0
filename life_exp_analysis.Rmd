@@ -1,0 +1,16 @@
+---
+title: "life_exp_analysis"
+author: "Andrew Erickson"
+date: "1/9/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Abstract
+
+Here, I re-examine the analysis of Oeppen and Vaupel (2002).
+
+# Analysis
