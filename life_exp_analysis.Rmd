@@ -13,4 +13,24 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Here, I re-examine the analysis of Oeppen and Vaupel (2002).
 
-# Analysis
+# Life Expectancy Analysis
+
+```{r}
+#Load tidyverse and gapminder 
+library(tidyverse)
+library(gapminder)
+
+#Load the gapminder unfiltered dataset: 
+data("gapminder_unfiltered")
+```
+
+Find the maximum life expectancy for each year and the country which had the maximum life expectancy. 
+
+```{r}
+#Use group_by and filter to find the country and corresponding max life expectancy for each year: 
+gapminder_unfiltered %>%
+  group_by(year) %>%
+  filter(lifeExp == max(lifeExp)) %>%
+  select(country, lifeExp) -> sumdat
+```
+
