@@ -1,5 +1,5 @@
 ---
-title: "life_exp_analysis"
+title: "life_exp_analysis_practice_01"
 author: "Andrew Erickson"
 date: "1/9/2022"
 output: html_document
@@ -26,11 +26,14 @@ data("gapminder_unfiltered")
 
 Find the maximum life expectancy for each year and the country which had the maximum life expectancy. 
 
+Here, our code will group the rows by year, then filter to find the maximum life expectancy within each group and the country's name. We drop all other rows, and keep only the year, country, and lifeExp, or life expectancy, columns. 
+
 ```{r}
 #Use group_by and filter to find the country and corresponding max life expectancy for each year: 
 gapminder_unfiltered %>%
   group_by(year) %>%
   filter(lifeExp == max(lifeExp)) %>%
-  select(country, lifeExp) -> sumdat
+  select(year, country, lifeExp) -> sumdat
 ```
 
+We have changed the title of this document to reflect that it is a test/practice Rmd file. 
